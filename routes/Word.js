@@ -29,14 +29,16 @@ router.post("/add", async (req, res) => {
     .catch((err) => res.status(400).json(`Error: ${err}`));
 });
 
-router.delete("/delete/:id", async (req, res) => {
-  Word.findByIdAndDelete(req.params.id)
-    .then((word) => {
-      res.status(202).json({ message: "Word deleted", word });
-    })
-    .catch((err) => {
-      res.status(401).json({ error: err });
-    });
-});
+//Something wrong with delete. Need to figure it out
+
+// router.delete("/delete/:id", async (req, res) => {
+//   Word.findByIdAndDelete(req.params.id)
+//     .then((word) => {
+//       res.status(202).json({ message: "Word deleted", word });
+//     })
+//     .catch((err) => {
+//       res.status(401).json({ error: err });
+//     });
+// });
 
 module.exports = router;
